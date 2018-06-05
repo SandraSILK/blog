@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+}
+
+.hero-main {
+    background: url('../images/hero-main.jpg');
+}
+
+.hero-riding {
+    background: url('../images/riding-hero.jpg');
+}
+
+.hero {
+    margin-top: 75px;    
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 35vh;
+
+
+    h1 {
+        color: map-get($colors, white);
+        background-color: map-get($colors, gray);
+        padding: 20px 0;
+        margin-bottom: 30px;
+    }
+
+    a {
+        background-color: map-get($colors, gray);
+        border: 1px solid map-get($colors, white);
+        border-radius: 3px;
+        padding: 10px 15px;
+        color: map-get($colors, white);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.offer {
+    padding: 0;
+
+    h6 {
+        position: absolute;
+        z-index: 1000;
+        display: none;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        opacity: .7;        
+    }
+
+    &:hover {
+        .box {
+            opacity: 1;
+        }
+
+        h6 {
+            display: block;
+            font-size: map-get($font-sizes, big);
+            margin-top: -40px;
+            color: map-get($colors, bs-font);
+        }
+    }
+}
+
+.posts {
+    p {
+        font-size: map-get($font-sizes, basic);
+    }
+}
+
+.main {
+    padding-top: 80px;
+
+    main {
+        padding-bottom: 80px;
+        padding-right: 40px;
+
+        h1 {
+            font-size: map-get($font-sizes, large);
+            border-bottom: 1px solid map-get($colors, gray);
+        }
+    }
+
+    aside {
+        background-color: map-get($colors, aside-main);
+        padding: 20px 30px;
+
+         h4 {
+            font-size: map-get($font-sizes, little);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+
+            li {
+                padding: 10px;
+
+                a {
+                    padding: 10px;
+                    color: map-get($colors, bs-font);
+                    font-size: map-get($font-sizes, smallest);
+                    letter-spacing: 1px;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: map-get($colors, aside-main);
+                        background-color: map-get($colors, footer);
+                        border: 1px solid map-get($colors, aside-main);
+                    }
+                }
+
+                &:last-child() {
+                    margin-top: 20px;
+
+                    a {
+                        background-color: map-get($colors, aside-main);
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+footer {
+    background-color: map-get($colors, footer);
+    color: map-get($colors, white);
+    padding: 15px 0 15px 15px;
+
+    p {
+        margin: 0;
+    }
+}

@@ -1,0 +1,75 @@
+.admin {
+    color: map-get($colors, text);
+
+    .mt-30 {
+        margin-top: 30px;
+    }
+
+    h4 {
+        font-size: map-get($font-sizes, little);
+    }
+
+    header,
+    nav {
+        background-color: map-get($colors, admin-nav);
+    }
+
+    header {
+        padding: 10px 15px;
+        font-size: map-get($font-sizes, smallest);
+    }
+
+    nav {
+        min-height: calc(100vh - 48px);
+        
+        ul {
+            list-style-type: none;
+        }
+
+        h6 {
+            font-size: map-get($font-sizes, basic);
+        }
+    }
+
+    .admin-content {
+        padding: 40px 60px;
+        background-color: map-get($colors, admin-main);        
+        box-shadow: inset 10px 10px 10px map-get($colors, shadow);
+    }
+
+    .basic-btn,
+    .basic-btn:focus,
+    .basic-btn:active,
+    .basic-btn:visited {
+        background-color: map-get($colors, admin-nav);
+        border: 1px solid map-get($colors, admin-nav);
+        color: map-get($colors, text);
+        font-size: map-get($font-sizes, smallest);
+
+        &:hover {
+            text-decoration: none;
+            border: 1px solid lighten( map-get($colors, admin-main), 40% );
+            background-color: map-get($colors, admin-main);
+            border-radius: 2px;
+        }
+    }
+
+    .btn-active {
+        text-decoration: none;
+        border: 1px solid lighten( map-get($colors, admin-main), 40% );
+        background-color: map-get($colors, admin-main);
+        border-radius: 2px;
+    }
+
+    .logo {
+        color: map-get($colors, text);
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .btn-img {
+        width: 20px;
+    }
+}
