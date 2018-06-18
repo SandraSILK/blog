@@ -2,6 +2,7 @@
 @section('content')
     <h4 class="font-weight-bold">Wszystkie wpisy</h4>
     @include('flash::message')
+    
     <table class="table table-hover table-striped mt-30">
         <thead>
             <tr>
@@ -17,8 +18,19 @@
                     <td>{{ $loop->iteration}}</td>
                     <td>{{ $post->created_at }}</td>
                     <td>{{ $post->title }}</td>
+                    
                     <td>
-                        <a href="#" class="btn btn-danger" title="usuń"><img src="{{ asset('images/garbage.svg') }}" class="btn-img"></a>
+                        <div class="js-alert">
+                            <p>Czy jeteś pewien, że chcesz usunąć wpis</p>
+                            {{ Form::open([
+                                'route' => ['admin.posts.destroy', $post],
+                                'method' => 'delete'
+                            ]) }}
+                                {{ Form::submit('Tak', ['class' => 'btn btn-outline-success']) }}
+                            {{ Form::close() }}
+                            <button id="js-no" class="btn btn-outline-danger">Nie</button>
+                        </div>
+                        <button class="js-remove btn btn-danger" title="usuń"><img src="{{ asset('images/garbage.svg') }}" class="btn-img"></button>
                         <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-success" title="edytuj"><img src="{{ asset('images/edit.svg') }}" class="btn-img"></a>
                     </td>
                 </tr>

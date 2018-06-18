@@ -22,3 +22,5 @@
 // const app = new Vue({ el: '#app' });
 
 // require('./admin/script-tinymce.js');
+
+require('./admin/alert-script.js');

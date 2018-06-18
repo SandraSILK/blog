@@ -6,7 +6,7 @@
             @if(Route::is('admin.posts.*'))
                 <ul>
                     <li>
-                        <a href="{{ route('admin.posts.create') }}" class="{{ Route::is('admin.posts.create') ? 'btn-active' : '' }} btn basic-btn">Dodaj wpis</a>
+                        <a href="{{ route('admin.posts.create') }}" class="btn basic-btn{{ Route::is('admin.posts.create') ? 'btn-active' : '' }} ">Dodaj wpis</a>
                     </li>
                 </ul>
             @endif

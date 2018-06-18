@@ -8,4 +8,5 @@ Route::group(['as' => 'posts.', 'prefix' => 'posts'], function() {
     Route::name('store')->post('/store', 'PostController@store');
     Route::name('edit')->get('/edit/{post}', 'PostController@edit');
     Route::name('update')->put('/update/{post}', 'PostController@update');
+    Route::name('destroy')->delete('/destroy/{post}', 'PostController@destroy');
 });

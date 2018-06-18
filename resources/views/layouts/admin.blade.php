@@ -38,8 +38,9 @@
     </div>
     
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/admin/admin.js') }}"></script>
     <script src="{{ mix('tinymce/js/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ mix('js/admin/script-tinymce.js') }}"></script>
+    <script src="{{ mix('js/admin/tinymce-script.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

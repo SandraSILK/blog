@@ -15,5 +15,6 @@ mix.copy('resources/assets/images', 'public/images')
     .copy('resources/assets/tinymce/', 'public/tinymce')
     .js('resources/assets/tinymce/js/tinymce/tinymce.min.js', 'public/tinymce/js/tinymce')
     .js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/admin/script-tinymce.js', 'public/js/admin')
+    .js('resources/assets/js/admin.js', 'public/js/admin')
+    .js('resources/assets/js/admin/tinymce-script.js', 'public/js/admin')
     .sass('resources/assets/sass/app.scss', 'public/css');

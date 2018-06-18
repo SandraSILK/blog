@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Post;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\Post as PostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-
 
 class PostController extends Controller
 {
@@ -25,7 +25,7 @@ class PostController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         $data = $request->only([
             'title',
@@ -36,13 +36,7 @@ class PostController extends Controller
         $post = Post::create($data);
 
         if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $name = $file->hashName();
-
-            Storage::putFileAs('public/posts', $file, $name);
-            $post->update([
-                'file' => sprintf('public/posts/%s', $name),
-            ]);
+            $this->addFile($request, $post);
         };
 
         return redirect()
@@ -57,8 +51,48 @@ class PostController extends Controller
         ]);
     }
 
-    public function update()
+    public function update(PostRequest $request, Post $post)
     {
-        dd('zapisz');
+        $data = $request->only([
+            'title',
+            'text',
+        ]);
+    
+        $post->update($data);
+
+        if($request->file('file')) {
+            $this->removeFile($post);
+            $this->addFile($request, $post);
+        }
+
+        return redirect()
+            ->route('admin.posts.index')
+            ->withFlash(sprintf('Pomyślnie zapisano zmiany %s', $request->input('title')));
+    }
+
+    public function destroy(Post $post)
+    {
+        dd('test');
+        $post->delete();
+
+        return redirect()
+            ->route('admin.posts.index')
+            ->withFlash(sprintf('Pomyślnie usunięto wpis %s', $post->title));
+    }
+
+    public function addFile($request, $post)
+    {
+        $file = $request->file('file');
+            $name = $file->hashName();
+
+            Storage::putFileAs('public/posts', $file, $name);
+            $post->update([
+                'file' => sprintf('public/posts/%s', $name),
+            ]);
+    }
+
+    public function removeFile($post)
+    {
+        Storage::delete($post->file);
     }
 }
