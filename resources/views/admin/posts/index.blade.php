@@ -20,15 +20,15 @@
                     <td>{{ $post->title }}</td>
                     
                     <td>
-                        <div class="js-alert">
+                        <div class="js-alert text-center">
                             <p>Czy jeteś pewien, że chcesz usunąć wpis</p>
                             {{ Form::open([
                                 'route' => ['admin.posts.destroy', $post],
                                 'method' => 'delete'
                             ]) }}
-                                {{ Form::submit('Tak', ['class' => 'btn btn-outline-success']) }}
+                                {{ Form::submit('Tak', ['class' => 'btn btn-success float-left']) }}
                             {{ Form::close() }}
-                            <button id="js-no" class="btn btn-outline-danger">Nie</button>
+                            <button class="js-no btn btn-danger float-left">Nie</button>
                         </div>
                         <button class="js-remove btn btn-danger" title="usuń"><img src="{{ asset('images/garbage.svg') }}" class="btn-img"></button>
                         <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-success" title="edytuj"><img src="{{ asset('images/edit.svg') }}" class="btn-img"></a>

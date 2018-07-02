@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 // use Illuminate\Http\Request;
 
 class SitesController extends Controller
 {
+    public function index()
+    {
+        $posts = Post::orderByDesc('created_at')->take(3)->get();
+        return view('welcome', [
+            'posts' => $posts,
+        ]);
+    }
+
     public function contact()
     {
         dd('cześć!');

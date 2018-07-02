@@ -17,4 +17,5 @@ mix.copy('resources/assets/images', 'public/images')
     .js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/admin.js', 'public/js/admin')
     .js('resources/assets/js/admin/tinymce-script.js', 'public/js/admin')
-    .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/fontello/css/fontello.css', 'public/css');

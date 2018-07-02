@@ -3,6 +3,14 @@ body {
     height: 100%;
 }
 
+nav {
+    box-shadow: 0 0 5px #999;
+}
+
+.m-top-80 {
+    margin-top: 80px;
+}
+
 .hero-main {
     background: url('../images/hero-main.jpg');
 }
@@ -71,7 +79,32 @@ body {
     }
 }
 
+.main-title {
+    font-size: map-get($font-sizes, large);
+    border-bottom: 1px solid map-get($colors, gray);
+}
+
 .posts {
+    .title {
+        padding: 10px 15px 10px 5px;
+    }
+
+    div:nth-child(3),
+    div:last-child() {   
+        border-top: 1px solid #000;
+        padding-top: 10px;
+    }
+
+    .data {
+        margin-top: 10px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
     p {
         font-size: map-get($font-sizes, basic);
     }
@@ -83,55 +116,49 @@ body {
     main {
         padding-bottom: 80px;
         padding-right: 40px;
+    }
+}
 
-        h1 {
-            font-size: map-get($font-sizes, large);
-            border-bottom: 1px solid map-get($colors, gray);
-        }
+.aside-bar {
+    background-color: map-get($colors, aside-main);
+    padding: 20px 30px;
+
+     h4 {
+        font-size: map-get($font-sizes, little);
     }
 
-    aside {
-        background-color: map-get($colors, aside-main);
-        padding: 20px 30px;
+    ul {
+        list-style-type: none;
+        padding-left: 0;
 
-         h4 {
-            font-size: map-get($font-sizes, little);
-        }
+        li {
+            padding: 10px;
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-
-            li {
+            a {
                 padding: 10px;
+                color: map-get($colors, bs-font);
+                font-size: map-get($font-sizes, smallest);
+                letter-spacing: 1px;
+
+                &:hover {
+                    text-decoration: none;
+                    color: map-get($colors, aside-main);
+                    background-color: map-get($colors, footer);
+                    border: 1px solid map-get($colors, aside-main);
+                }
+            }
+
+            &:last-child() {
+                margin-top: 20px;
 
                 a {
-                    padding: 10px;
-                    color: map-get($colors, bs-font);
-                    font-size: map-get($font-sizes, smallest);
-                    letter-spacing: 1px;
-
-                    &:hover {
-                        text-decoration: none;
-                        color: map-get($colors, aside-main);
-                        background-color: map-get($colors, footer);
-                        border: 1px solid map-get($colors, aside-main);
-                    }
-                }
-
-                &:last-child() {
-                    margin-top: 20px;
-
-                    a {
-                        background-color: map-get($colors, aside-main);
-                        border: none;
-                    }
+                    background-color: map-get($colors, aside-main);
+                    border: none;
                 }
             }
         }
     }
 }
-
 
 footer {
     background-color: map-get($colors, footer);
@@ -141,4 +168,8 @@ footer {
     p {
         margin: 0;
     }
+}
+
+.content-area {
+    padding-bottom: 80px;
 }

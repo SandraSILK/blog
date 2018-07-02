@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderByDesc('created_at')->get();
 
         return view('admin.posts.index', [
             'posts' => $posts,
@@ -72,7 +72,6 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        dd('test');
         $post->delete();
 
         return redirect()

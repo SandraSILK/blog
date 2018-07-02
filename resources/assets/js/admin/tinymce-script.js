@@ -13,6 +13,5 @@ tinymce.init({
         "insertdatetime media table contextmenu paste imagetools wordcount"
     ],
     menubar: 'edit | view | insert | format | table',
-    images_upload_url: 'postAcceptor.php',
-    automatic_uploads: false
+    paste_data_images: true,
 });
