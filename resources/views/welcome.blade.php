@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Black Horse Team - Jazda Konna - Owczarnia')
 @section('content')
     <header>
         <div class="hero hero-main text-center">

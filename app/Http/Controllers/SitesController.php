@@ -10,6 +10,7 @@ class SitesController extends Controller
     public function index()
     {
         $posts = Post::orderByDesc('created_at')->take(3)->get();
+
         return view('welcome', [
             'posts' => $posts,
         ]);
@@ -22,7 +23,7 @@ class SitesController extends Controller
 
     public function team()
     {
-        dd('cześć!');
+        return view('team.team');
     }
 
     public function stable()

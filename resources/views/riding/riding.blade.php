@@ -1,6 +1,8 @@
 @extends('layouts.app')
+@section('title', 'Black Horse Team - Jazda Konna')
 @section('content')
-    <header style="background: url({{ asset('images/horse-riding.jpg') }}) center no-repeat; height: 200px; background-size: 100%;">
+    <header>
+        <img src="{{ asset('images/riding-hero.jpg') }}" class="hero-page">
     </header>
     <div class="container m-top-80">
         <section>

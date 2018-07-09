@@ -126,7 +126,7 @@ nav {
      h4 {
         font-size: map-get($font-sizes, little);
     }
-
+    
     ul {
         list-style-type: none;
         padding-left: 0;
@@ -172,4 +172,76 @@ footer {
 
 .content-area {
     padding-bottom: 80px;
+}
+
+.hero-page {
+    height: 250px; 
+    object-fit: cover; 
+    width: 100%;
+}
+
+.js-active-body {
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 2000;
+
+    span {
+        color: #fff;
+        position: fixed;
+    }
+
+    #js-prev {
+        left: 100px;
+
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    #js-prev,
+    #js-next {
+        line-height: 100vh;
+    }
+
+    #js-next {
+        right: 100px;
+    }
+
+    #js-close {
+        right: 0;
+    }
+}
+
+.js-active {
+    z-index: 3000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+@media (max-width: 540px) {
+    .js-active-body {
+
+        #js-prev {
+            left: 0px;
+        }
+
+        #js-close,
+        #js-next {
+            right: 0px;
+        }
+    }
+
+    .js-active {
+        width: 80%;
+    }
 }
