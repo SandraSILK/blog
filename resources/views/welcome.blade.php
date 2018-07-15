@@ -52,7 +52,7 @@
                     <h1 class="main-title">Aktualności</h1>
                     @foreach($posts as $post)
                         <div>
-                            <p class="font-weight-bold title" style="background: #e8eaf6">{{ $post->title }}</p>
+                            <p class="font-weight-bold title">{{ $post->title }}</p>
                             <p class="data">data: {{ $post->created_at->format('d.m.Y') }}</p>
                             <p>{{ $post->content }}</p>
                         </div>

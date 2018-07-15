@@ -50,4 +50,13 @@ class SitesController extends Controller
     {
         dd('cześć!');
     }
+
+    public function archives()
+    {
+        $posts = Post::paginate(5);
+
+        return view('archives.index', [
+            'posts' => $posts,
+        ]);
+    }
 }

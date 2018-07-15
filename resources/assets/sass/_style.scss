@@ -85,9 +85,6 @@ nav {
 }
 
 .posts {
-    .title {
-        padding: 10px 15px 10px 5px;
-    }
 
     div:nth-child(3),
     div:last-child() {   
@@ -168,6 +165,17 @@ footer {
     p {
         margin: 0;
     }
+
+    a {
+        color: map-get($colors, aside-main);
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: none;
+            background-color: map-get($colors, aside-main);
+            color: #000;
+        }
+    }
 }
 
 .content-area {
@@ -244,4 +252,32 @@ footer {
     .js-active {
         width: 80%;
     }
+}
+
+.title {
+    padding: 10px 15px 10px 5px;
+}
+
+.fb {
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.page-link {
+    border: none;
+    color: #000;
+
+    &:hover {
+        border: none;
+        border-bottom: 1px solid #000;
+        background-color: transparent;
+    }
+}
+
+.page-item.disabled .page-link {
+    color: #000;
+}
+
+.page-item.active .page-link {
+    background-color: #000;
 }

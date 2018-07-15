@@ -18,5 +18,6 @@ Route::name('riding')->get('jazda-konna', 'SitesController@riding');
 Route::name('club')->get('klub-jezdziecki', 'SitesController@club');
 Route::name('transport')->get('transport', 'SitesController@transport');
 Route::name('training')->get('treningi', 'SitesController@training');
+Route::name('archives')->get('archiwum', 'SitesController@archives');
 
 Auth::routes();
