@@ -4,7 +4,7 @@
     <header>
         <div class="hero hero-main text-center">
             <h1>Black Horse Team</h1>
-            <a href="#">Poznaj nas</a>
+            <a href="{{ route('team') }}">Poznaj nas</a>
         </div>
     </header>
     <nav>
