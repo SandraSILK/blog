@@ -236,7 +236,7 @@ footer {
     margin: auto;
 }
 
-@media (max-width: 540px) {
+@include media-breakpoint-down(sm) {
     .js-active-body {
 
         #js-prev {
@@ -280,4 +280,14 @@ footer {
 
 .page-item.active .page-link {
     background-color: #000;
+}
+
+.js-gallery {
+    img {
+        padding: 5px;
+    }
+
+    h5 {
+        text-align: left;
+    }
 }

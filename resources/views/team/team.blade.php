@@ -9,7 +9,7 @@
             <div class="row">
                 <main class="col-md-8 content-area">
                     <h1 class="main-title">Ekipa Black Horse Team</h1>
-                    <div class="js-gallery">
+                    <div class="js-gallery text-center">
                         <h5 class="title">Dotii</h5>
                         <img class="js-img" src="http://stajniabht.pl/grafika/dotti1.jpg">
                         <img class="js-img" src="http://stajniabht.pl/grafika/dotti2.jpg">
@@ -29,11 +29,10 @@
             </div>
         </section>
     </div>
-    <div class="js-body-gallery">
+    <div class="js-body-gallery d-none">
         <span id="js-prev"><img src="{{ asset('images/arrow.png') }}"></span>
         <span id="js-next"><img src="{{ asset('images/arrow.png') }}"></span>
         <span id="js-close"><img src="{{ asset('images/close.png') }}"></span>
-        <div id="js-box"></div>
     </div>
 @endsection
 

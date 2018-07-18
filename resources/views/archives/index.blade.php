@@ -8,7 +8,7 @@
         <section>
             <div class="row">
                 <main class="col-md-8 posts">
-                	<h1 class="main-title">Archiuwm Aktualności</h1>
+                	<h1 class="main-title">Archiuwm aktualności</h1>
                 	@foreach($posts as $post)
                 		<div>
                             <p class="font-weight-bold title">{{ $post->title }}</p>

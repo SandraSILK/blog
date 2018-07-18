@@ -3,8 +3,10 @@
     <ul>
         <li><a href="#">Odznaki materiały</a></li>
         <li><a href="#">Parkur trening</a></li>
-        <li><a href="{{ route('archives') }}">Archiwum aktualności</a></li>
-        @if(!Route::is('main'))
+        @if(!Route::is('archives'))
+            <li><a href="{{ route('archives') }}">Archiwum aktualności</a></li>
+        @endif
+        @if(!Route::is('team'))
             <li>
                 <a href="{{ route('team') }}">Ekipa x BHT</a>
             </li>

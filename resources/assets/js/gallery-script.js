@@ -6,12 +6,14 @@
         img.on('click', function() {
             $(this).addClass('js-active');
             $('.js-body-gallery').addClass('js-active-body');
+            $('.js-body-gallery').removeClass('d-none');
             $(document.body).css('overflow-y', 'hidden');
         });
 
         $('#js-close').on('click', function() {
             img.removeClass('js-active');
             $('.js-body-gallery').removeClass('js-active-body');
+            $('.js-body-gallery').addClass('d-none');
             $(document.body).css('overflow-y', 'auto');
         });
 
